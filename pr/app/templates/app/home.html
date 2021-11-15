@@ -1,0 +1,36 @@
+
+{% extends "template.html" %}
+{% block title %}
+
+<title>Home</title>
+
+{% endblock %}
+
+{% block sidebar %}
+      <div class="sidebar-nav">
+          <!--div><a href="../">Home</a></--div-->
+          <div><a href="add/"><h3>Добавление записи</h3></a></div>
+          <!--li><a href="">All books</a></li>
+          <li><a href="">All authors</a></li-->
+      </div>
+{% endblock %}
+
+{% block content %}
+
+<h1>Products</h1>
+
+    {% if product_list %}
+    <ul>
+
+      {% for one in product_list %}
+      <li>
+        <a href="{{ one.id }}/">{{ one.name }}</a> ({{ one.quantity }})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no products.</p>
+    {% endif %}
+
+{% endblock %}

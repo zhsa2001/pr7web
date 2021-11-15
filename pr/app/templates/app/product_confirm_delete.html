@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<h1>Delete</h1>
+
+<p>Are you sure you want to delete the product: {{ product.name }} (id={{product.id}})?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Удалить" />
+</form>
+
+{% endblock %}
